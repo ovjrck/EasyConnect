@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">EasyConnect</string>
+
+    <!-- IMAGE DESC -->
+    <string name="Siren">siren</string>
+
+    <!--Main Activity-->
+    <!--Button-->
+    <string name="add_location">+</string>
+    <!--Text View-->
+    <string name="title">Call Emergency Helper</string>
+
+
+</resources>
