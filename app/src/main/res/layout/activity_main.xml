@@ -65,7 +65,7 @@
         android:layout_height="47dp"
         android:background="#FFFFFF"
         android:fontFamily="sans-serif-black"
-        android:text="@string/title"
+        android:text="@string/mainActivityTitle"
         android:textAlignment="center"
         android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"

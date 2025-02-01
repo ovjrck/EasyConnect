@@ -8,7 +8,8 @@
     <!--Button-->
     <string name="add_location">+</string>
     <!--Text View-->
-    <string name="title">Call Emergency Helper</string>
+    <string name="mainActivityTitle">Call Emergency Helper</string>
 
-
+    <!--Add Location Activity-->
+    <string name="addLocationActivityTitle">Pick a Location</string>
 </resources>
