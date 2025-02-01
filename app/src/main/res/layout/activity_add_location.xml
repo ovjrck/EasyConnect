@@ -6,12 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F6C6AD"
+    android:paddingStart="0sp"
+    android:paddingLeft="0sp"
+    android:paddingTop="0sp"
+    android:paddingEnd="0sp"
+    android:paddingRight="0sp"
+    android:paddingBottom="0sp"
     tools:context=".AddLocationActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="0dp"
-        android:layout_height="84dp"
+        android:layout_height="132dp"
         android:background="#B7FFDB"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,6 +37,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/siren" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="40dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/backBtn" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
@@ -53,10 +70,24 @@
         android:id="@+id/constraintLayout2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="87dp"
+        android:layout_marginTop="38dp"
         android:background="#F2AA84"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"/>
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/mappps" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,15 +1,30 @@
 <resources>
     <string name="app_name">EasyConnect</string>
 
-    <!-- IMAGE DESC -->
+    <!--APPLICATION ICON LOGO-->
     <string name="Siren">siren</string>
+    <!--BACK BUTTON ICON-->
+    <string name="backBtn">Back</string>
 
-    <!--Main Activity-->
+    <!--MAIN ACTIVITY-->
     <!--Button-->
     <string name="add_location">+</string>
     <!--Text View-->
     <string name="mainActivityTitle">Call Emergency Helper</string>
 
-    <!--Add Location Activity-->
+    <!--ADD LOCATION ACTIVITY-->
     <string name="addLocationActivityTitle">Pick a Location</string>
+
+    <!--CONTACT ACTIVITY-->
+    <!--Text View-->
+    <string name="contactActivityTitle">Contacts</string>
+    <string name="contactActivityTitle2">NAME OF LOCATION</string>
+
+    <!--ADD CONTACT INFO ACTIVITY-->
+    <string name="addContactInfoActivityTitle">Contact</string>
+    <string name="addContactInfoActivity2Title">add person</string>
+
+    <!--CALLING ACTIVITY-->
+    <string name="callingActivityTitle">Calling</string>
+
 </resources>
