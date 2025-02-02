@@ -14,6 +14,7 @@
 
     <!--ADD LOCATION ACTIVITY-->
     <string name="addLocationActivityTitle">Pick a Location</string>
+    <string name="addToLocation">+</string>
 
     <!--CONTACT ACTIVITY-->
     <!--Text View-->

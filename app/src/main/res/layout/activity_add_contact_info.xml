@@ -47,7 +47,7 @@
             app:srcCompat="@drawable/siren" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/backImage"
             android:layout_width="40dp"
             android:layout_height="33dp"
             android:layout_marginStart="16dp"
@@ -55,7 +55,7 @@
             android:contentDescription="@string/backBtn"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/backBtn" />
+            app:srcCompat="@drawable/backicon" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -63,12 +63,14 @@
         android:id="@+id/constraintLayout3"
         android:layout_width="0dp"
         android:layout_height="649dp"
+        android:layout_marginTop="51dp"
         android:layout_marginBottom="1dp"
         android:background="#F2AA84"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
 
         <EditText
             android:id="@+id/editTextText3"
