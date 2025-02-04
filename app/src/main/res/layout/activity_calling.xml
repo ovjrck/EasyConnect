@@ -5,14 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F6C6AD"
+    android:background="#FF4747"
     tools:context=".CallingActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="0dp"
         android:layout_height="204dp"
-        android:background="#B7FFDB"
+        android:background="#FF7575"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -39,7 +39,7 @@
         android:layout_marginStart="1dp"
         android:layout_marginTop="55dp"
         android:layout_marginEnd="1dp"
-        android:background="#F2AA84"
+        android:background="#FF7575"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,12 +53,34 @@
             android:layout_marginEnd="21dp"
             android:layout_marginBottom="26dp"
             android:backgroundTint="#FF9797"
-            android:text="@string/add_location"
             android:textColor="#FF0000"
             android:textSize="34sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="366dp"
+            android:layout_height="73dp"
+            android:background="#FFFFFF"
+            android:fontFamily="sans-serif-black"
+            android:text="NAME OF PERSON"
+            android:textAlignment="center"
+            android:textSize="40sp"
+            tools:layout_editor_absoluteX="21dp"
+            tools:layout_editor_absoluteY="37dp" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="77dp"
+            android:layout_height="68dp"
+            app:layout_constraintBottom_toBottomOf="@+id/btnAddLocation"
+            app:layout_constraintEnd_toEndOf="@+id/btnAddLocation"
+            app:layout_constraintStart_toStartOf="@+id/btnAddLocation"
+            app:layout_constraintTop_toTopOf="@+id/btnAddLocation"
+            app:srcCompat="@drawable/calling" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
