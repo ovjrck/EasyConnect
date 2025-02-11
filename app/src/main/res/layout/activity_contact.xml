@@ -53,6 +53,7 @@
             android:layout_height="33dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+            android:onClick="toLocationActivity"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/backicon" />
@@ -354,7 +355,7 @@
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
         android:fontFamily="sans-serif-black"
-        android:text="@string/contactActivityTitle2"
+        android:text="HOME"
         android:textAlignment="center"
         android:textColor="#070707"
         android:textSize="35sp"

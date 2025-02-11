@@ -63,4 +63,9 @@ public class ContactActivity extends AppCompatActivity {
         Intent intent = new Intent(ContactActivity.this, CallingActivity.class);
         startActivity(intent);
     }
+
+    public void toLocationActivity(View view){
+        Intent intent = new Intent(ContactActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
 }
