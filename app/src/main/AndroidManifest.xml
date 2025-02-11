@@ -16,13 +16,7 @@
             android:name=".CallingActivity"
             android:exported="false" />
         <activity
-            android:name=".AddContactInfoActivity"
-            android:exported="false" />
-        <activity
             android:name=".ContactActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AddLocationActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

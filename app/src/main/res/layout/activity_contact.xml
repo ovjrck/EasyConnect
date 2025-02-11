@@ -16,6 +16,7 @@
         android:fontFamily="sans-serif-black"
         android:text="@string/contactActivityTitle"
         android:textAlignment="center"
+        android:textColor="#070707"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -71,6 +72,105 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clContactEdit"
+            android:layout_width="351dp"
+            android:layout_height="318dp"
+            android:background="#F0ECEC"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/button3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/btnCancelEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:backgroundTint="#B43737"
+                android:onClick="cancelEdit"
+                android:text="X"
+                android:textColor="#FAFAFA"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnEditContact"
+                app:layout_constraintTop_toBottomOf="@+id/etContactNumber" />
+
+            <TextView
+                android:id="@+id/tvEditContact"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="#FBFAFA"
+                android:fontFamily="sans-serif-black"
+                android:text="EDIT"
+                android:textAlignment="center"
+                android:textColor="#070707"
+                android:textSize="35sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvPerson"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:fontFamily="sans-serif-black"
+                android:text="Contact"
+                android:textAlignment="center"
+                android:textColor="#070707"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvEditContact" />
+
+            <EditText
+                android:id="@+id/etContactName"
+                android:layout_width="318dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:hint="Contact Name"
+                android:inputType="text"
+                android:textColor="#070707"
+                android:textColorHint="#616161"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.484"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPerson" />
+
+            <EditText
+                android:id="@+id/etContactNumber"
+                android:layout_width="317dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:hint="Phone Number"
+                android:inputType="number"
+                android:textColor="#070707"
+                android:textColorHint="#616161"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etContactName" />
+
+            <Button
+                android:id="@+id/btnEditContact"
+                android:layout_width="171dp"
+                android:layout_height="46dp"
+                android:backgroundTint="#83CBEB"
+                android:onClick="addContact"
+                android:text="EDIT"
+                android:textColor="#121111"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etContactNumber"
+                tools:layout_editor_absoluteX="32dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
         <Button
             android:id="@+id/button"
             android:layout_width="145dp"
@@ -82,6 +182,7 @@
             android:text="@string/add_location"
             android:textColor="#000000"
             android:textSize="34sp"
+            android:onClick="addContact"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/button3"
             app:layout_constraintStart_toStartOf="parent" />
@@ -95,6 +196,7 @@
             android:backgroundTint="#83CBEB"
             android:textColor="#000000"
             android:textSize="34sp"
+            android:onClick="toCall"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -102,11 +204,147 @@
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="toCall"
             app:layout_constraintBottom_toBottomOf="@+id/button3"
             app:layout_constraintEnd_toEndOf="@+id/button3"
             app:layout_constraintStart_toStartOf="@+id/button3"
             app:layout_constraintTop_toTopOf="@+id/button3"
             app:srcCompat="@drawable/cal" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clContactInput"
+            android:layout_width="351dp"
+            android:layout_height="318dp"
+            android:background="#F0ECEC"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/button3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/btnCancelContact"
+                android:layout_width="wrap_content"
+                android:layout_height="46dp"
+                android:layout_marginEnd="28dp"
+                android:backgroundTint="#B43737"
+                android:onClick="cancelContact"
+                android:text="X"
+                android:textColor="#FAFAFA"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextNumber"
+                app:layout_constraintVertical_bias="0.512" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-black"
+                android:text="@string/addContactInfoActivityTitle"
+                android:textAlignment="center"
+                android:textColor="#070707"
+                android:textSize="35sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:fontFamily="sans-serif-black"
+                android:text="@string/addContactInfoActivity2Title"
+                android:textAlignment="center"
+                android:textColor="#070707"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+            <EditText
+                android:id="@+id/editTextText4"
+                android:layout_width="318dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:ems="10"
+                android:hint="Contact Name"
+                android:inputType="text"
+                android:textColor="#070707"
+                android:textColorHint="#616161"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.515"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+            <EditText
+                android:id="@+id/editTextNumber"
+                android:layout_width="317dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="20dp"
+                android:ems="10"
+                android:hint="Phone Number"
+                android:inputType="number"
+                android:textColor="#070707"
+                android:textColorHint="#616161"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.529"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
+
+            <Button
+                android:id="@+id/btnAddContact"
+                android:layout_width="171dp"
+                android:layout_height="46dp"
+                android:backgroundTint="#83CBEB"
+                android:onClick="addContact"
+                android:text="ADD"
+                android:textColor="#121111"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btnCancelContact"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:id="@+id/svContactList"
+            android:layout_width="405dp"
+            android:layout_height="554dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="3dp"
+            android:padding="10dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/button3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button7"
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:backgroundTint="#F4F1F1"
+                    android:onClick="editContact"
+                    android:padding="15dp"
+                    android:text="Micky"
+                    android:textColor="#0B0B0B"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+        </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -118,6 +356,7 @@
         android:fontFamily="sans-serif-black"
         android:text="@string/contactActivityTitle2"
         android:textAlignment="center"
+        android:textColor="#070707"
         android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
