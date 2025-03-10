@@ -14,6 +14,7 @@
 
     <!--ADD LOCATION ACTIVITY-->
     <string name="addLocationActivityTitle">Pick a Location</string>
+    <string name="locationTitle">LOCATION</string>
     <string name="addToLocation">+</string>
 
     <!--CONTACT ACTIVITY-->
@@ -27,5 +28,6 @@
 
     <!--CALLING ACTIVITY-->
     <string name="callingActivityTitle">Calling</string>
+
 
 </resources>
