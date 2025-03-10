@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void toLocation(View view){
-        Intent intent = new Intent(MainActivity.this, ContactActivity.class);
+        Intent intent = new Intent(MainActivity.this, LocationActivity.class);
         startActivity(intent);
     }
 }
