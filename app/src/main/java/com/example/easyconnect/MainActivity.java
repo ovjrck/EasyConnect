@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         location.setBackgroundResource(R.drawable.buttonstyle);
 
         //on click function
-        //location.setOnClickListener(v -> toLocation(v));
+        location.setOnClickListener(v -> toContact(v));
 
         if(!location.getText().equals("")){
             linearLayout.addView(location);
@@ -81,6 +81,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void toLocation(View view){
         Intent intent = new Intent(MainActivity.this, LocationActivity.class);
+        startActivity(intent);
+    }
+
+    public void toContact(View view){
+        Intent intent = new Intent(MainActivity.this, ContactActivity.class);
         startActivity(intent);
     }
 

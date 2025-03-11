@@ -181,6 +181,7 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
         startActivity(intent);
     }
 
+    //INTENT SET PARAMETERS
     public static final String LOCATION_NAME = "com.example.easyconnect.MESSAGE";
     public void addLocation(View view){
         EditText txtMapName = findViewById(R.id.txtMapName);
