@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         location.setBackgroundResource(R.drawable.buttonstyle);
 
         //on click function
-        location.setOnClickListener(v -> toContact(v));
+        location.setOnClickListener(v -> toContact(v, location));
 
         if(!location.getText().equals("")){
             linearLayout.addView(location);
@@ -84,8 +85,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void toContact(View view){
+    public static final String LOCATION_NAME = "com.example.easyconnect.MESSAGE";
+    public void toContact(View view, Button b){
         Intent intent = new Intent(MainActivity.this, ContactActivity.class);
+        intent.putExtra(LOCATION_NAME, b.getText().toString());
         startActivity(intent);
     }
 
