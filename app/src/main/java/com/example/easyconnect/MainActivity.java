@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
@@ -34,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        ConstraintLayout editContainer = findViewById(R.id.editContainer);
+        editContainer.setVisibility(View.GONE);
 
         List<String> allLocations = SharedDataModel.getInstance().getLocations();
         for (String mapName : allLocations) {
