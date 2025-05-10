@@ -11,6 +11,9 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -31,11 +34,31 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        Intent intent = getIntent();
-        String mapName = intent.getStringExtra(LocationActivity.LOCATION_NAME);
 
-        addLocation(mapName);
+        List<String> allLocations = SharedDataModel.getInstance().getLocations();
+        for (String mapName : allLocations) {
+            addLocation(mapName);
+        }
+
+        reloadLocationList();
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        reloadLocationList();
+    }
+
+    private void reloadLocationList() {
+        LinearLayout linearLayout = findViewById(R.id.listOfLocations);
+        linearLayout.removeAllViews(); // clear previous views
+
+        List<String> allLocations = SharedDataModel.getInstance().getLocations();
+        for (String mapName : allLocations) {
+            addLocation(mapName);
+        }
+    }
+
 
     //dynamic adding layout to list of locations
     public void addLocation(String mapName) {
@@ -87,9 +110,20 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String LOCATION_NAME = "com.example.easyconnect.MESSAGE";
     public void toContact(View view, Button b){
+        String locationName = b.getText().toString();
+        List<String> contacts = getContactsForLocation(locationName); // Retrieve the contacts for this location
+
         Intent intent = new Intent(MainActivity.this, ContactActivity.class);
-        intent.putExtra(LOCATION_NAME, b.getText().toString());
+        intent.putExtra(LOCATION_NAME, locationName);  // Pass the location name
+        intent.putStringArrayListExtra("CONTACTS_LIST", new ArrayList<>(contacts));  // Pass the contacts for this location
         startActivity(intent);
+    }
+
+    private List<String> getContactsForLocation(String location) {
+        // Replace this with your actual logic to get contacts for the location
+        List<String> contacts = new ArrayList<>();
+        // Example: contacts.add(location + " Contact 1");
+        return contacts;
     }
 
 }

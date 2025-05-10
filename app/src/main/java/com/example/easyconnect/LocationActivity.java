@@ -7,12 +7,10 @@ import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
@@ -182,14 +180,15 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
     }
 
     //INTENT SET PARAMETERS
-    public static final String LOCATION_NAME = "com.example.easyconnect.MESSAGE";
     public void addLocation(View view){
         EditText txtMapName = findViewById(R.id.txtMapName);
-
-        Intent intent = new Intent(LocationActivity.this, MainActivity.class);
         String locationName = txtMapName.getText().toString();
-        intent.putExtra(LOCATION_NAME, locationName);
-        startActivity(intent);
+
+        if (!locationName.isEmpty()) {
+            SharedDataModel.getInstance().addLocation(locationName);
+            Intent intent = new Intent(LocationActivity.this, MainActivity.class);
+            startActivity(intent);
+        }
     }
 
     public void hideInputContainer(View view){

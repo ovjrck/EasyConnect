@@ -74,7 +74,7 @@
         app:layout_constraintTop_toBottomOf="@+id/lblLocationName">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnAddContact"
             android:layout_width="145dp"
             android:layout_height="60dp"
             android:layout_marginStart="30dp"
@@ -86,32 +86,22 @@
             android:textSize="34sp"
             android:onClick="showContactInput"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/button3"
+            app:layout_constraintEnd_toStartOf="@+id/btnCall"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btnCall"
             android:layout_width="145dp"
             android:layout_height="59dp"
             android:layout_marginEnd="48dp"
             android:layout_marginBottom="20dp"
             android:backgroundTint="#83CBEB"
-            android:textColor="#000000"
-            android:textSize="34sp"
             android:onClick="toCall"
+            android:text="CALL"
+            android:textColor="#075B0B"
+            android:textSize="28sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="toCall"
-            app:layout_constraintBottom_toBottomOf="@+id/button3"
-            app:layout_constraintEnd_toEndOf="@+id/button3"
-            app:layout_constraintStart_toStartOf="@+id/button3"
-            app:layout_constraintTop_toTopOf="@+id/button3"
-            app:srcCompat="@drawable/cal" />
 
         <ScrollView
             android:id="@+id/svContactList"
@@ -119,9 +109,9 @@
             android:layout_height="535dp"
             android:layout_marginTop="20dp"
             android:visibility="visible"
-            app:layout_constraintBottom_toTopOf="@+id/button3"
+            app:layout_constraintBottom_toTopOf="@+id/btnCall"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.333"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0">
@@ -141,7 +131,7 @@
             android:layout_height="318dp"
             android:background="#F0ECEC"
             android:visibility="gone"
-            app:layout_constraintBottom_toTopOf="@+id/button3"
+            app:layout_constraintBottom_toTopOf="@+id/btnCall"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -239,7 +229,7 @@
             android:layout_height="318dp"
             android:background="#F0ECEC"
             android:visibility="gone"
-            app:layout_constraintBottom_toTopOf="@+id/button3"
+            app:layout_constraintBottom_toTopOf="@+id/btnCall"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
