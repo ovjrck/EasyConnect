@@ -185,7 +185,8 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
         String locationName = txtMapName.getText().toString();
 
         if (!locationName.isEmpty()) {
-            SharedDataModel.getInstance().addLocation(locationName);
+            MyDatabaseHelper myDB = new MyDatabaseHelper(LocationActivity.this);
+            myDB.addLocation(locationName);
             Intent intent = new Intent(LocationActivity.this, MainActivity.class);
             startActivity(intent);
         }

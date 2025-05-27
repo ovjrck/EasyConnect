@@ -40,6 +40,11 @@ public class ContactActivity extends AppCompatActivity {
         TextView locationName = findViewById(R.id.lblLocationName);
         locationName.setText(locName);
 
+        SharedDataModel.getInstance().getLocations().clear();
+        SharedDataModel.getInstance().getContacts().clear();
+        MyDatabaseHelper dbHelper = new MyDatabaseHelper(this);
+        dbHelper.loadAllLocationsToSharedModel();
+        dbHelper.loadAllContactsToSharedModel();
         reloadContactList();
     }
 
@@ -223,7 +228,8 @@ public class ContactActivity extends AppCompatActivity {
             String contactEntry = name + " - " + number;
 
             // Add to SharedDataModel so it persists while app is open
-            SharedDataModel.getInstance().addContact(contactEntry);
+            MyDatabaseHelper myDB = new MyDatabaseHelper(ContactActivity.this);
+            myDB.addContact(contactEntry);
 
             // Then display it
             addDynamicButtonForContact(contactEntry);

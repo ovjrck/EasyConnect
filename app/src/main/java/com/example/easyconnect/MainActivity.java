@@ -36,6 +36,12 @@ public class MainActivity extends AppCompatActivity {
         ConstraintLayout editContainer = findViewById(R.id.editContainer);
         editContainer.setVisibility(View.GONE);
 
+        SharedDataModel.getInstance().getLocations().clear();
+        SharedDataModel.getInstance().getContacts().clear();
+        MyDatabaseHelper dbHelper = new MyDatabaseHelper(this);
+        dbHelper.loadAllLocationsToSharedModel();
+        dbHelper.loadAllContactsToSharedModel();
+
         List<String> allLocations = SharedDataModel.getInstance().getLocations();
         for (String mapName : allLocations) {
             addLocation(mapName);

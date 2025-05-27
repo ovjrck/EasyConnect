@@ -35,4 +35,9 @@ public class SharedDataModel {
     public List<String> getContacts() {
         return contacts;
     }
+
+    public void clearAllData() {
+        locations.clear();
+        contacts.clear();
+    }
 }
