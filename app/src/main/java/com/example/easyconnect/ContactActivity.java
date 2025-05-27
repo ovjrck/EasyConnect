@@ -103,9 +103,12 @@ public class ContactActivity extends AppCompatActivity {
     public void showContactInput(View view) {
         ConstraintLayout clContactInput = findViewById(R.id.clContactInput);
         ScrollView svContactList = findViewById(R.id.svContactList);
+        ConstraintLayout clContactEdit = findViewById(R.id.clContactEdit);
 
+        clContactEdit.setVisibility(View.GONE);
         clContactInput.setVisibility(View.VISIBLE);
         svContactList.setVisibility(View.GONE);
+
     }
 
     public void cancelContact(View view){
@@ -117,26 +120,52 @@ public class ContactActivity extends AppCompatActivity {
     }
 
     public void editContact(View view) {
-        // Get the selected contact's information
-        String contactName = ((Button) view).getText().toString(); // You can extract the contact name from the button text
-        String[] contactDetails = contactName.split(" - "); // Split the name and number (assuming it's formatted as "name - number")
+        // 1. Get the old contact string from the clicked button
+        String oldContactName = ((Button) view).getText().toString();
 
-        // Get the EditText views for name and number
+        // 2. Split to get name and number parts
+        String[] contactDetails = oldContactName.split(" - ");
+
+        // 3. Find the EditText views
         EditText txtContactNameEdit = findViewById(R.id.txtContactNameEdit);
         EditText txtContactNumberEdit = findViewById(R.id.txtContactNumberEdit);
 
-        // Set the contact's name and number in the EditText fields
+        // 4. Set the EditTexts with current contact info (if valid)
         if (contactDetails.length == 2) {
             txtContactNameEdit.setText(contactDetails[0]);
             txtContactNumberEdit.setText(contactDetails[1]);
         }
 
-        // Show the contact edit layout and hide the contact list
+        // 5. Show the edit layout and hide the contact list
         ConstraintLayout clContactEdit = findViewById(R.id.clContactEdit);
         ScrollView svContactList = findViewById(R.id.svContactList);
-
         clContactEdit.setVisibility(View.VISIBLE);
         svContactList.setVisibility(View.GONE);
+
+        // 6. Set up the Save button listener inside this method (or wherever you handle save)
+        Button btnSave = findViewById(R.id.btnEditContact);
+        btnSave.setOnClickListener(v -> {
+            // Get the new contact name and number from EditTexts
+            String newName = txtContactNameEdit.getText().toString().trim();
+            String newNumber = txtContactNumberEdit.getText().toString().trim();
+
+            // Combine new name and number into the same format
+            String newContactName = newName + " - " + newNumber;
+
+            // Update the contact in the database using oldContactName for WHERE clause
+            MyDatabaseHelper dbHelper = new MyDatabaseHelper(this);
+            dbHelper.updateContact(oldContactName, newContactName);
+
+            // Hide edit layout, show contact list
+            clContactEdit.setVisibility(View.GONE);
+            svContactList.setVisibility(View.VISIBLE);
+
+            // Update the text of the original button to the new contact name
+            ((Button) view).setText(newContactName);
+
+            // Optionally reload the contact list if needed
+            // reloadContactList(); // Uncomment if you have such a method to refresh the list
+        });
     }
 
     public void cancelEdit(View view){

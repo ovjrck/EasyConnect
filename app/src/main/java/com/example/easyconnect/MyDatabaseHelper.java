@@ -68,12 +68,12 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    void updateContact(String contact_id, String contact_name) {
+    void updateContact(String oldContactName, String newContactName) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
-        cv.put("contact_name", contact_name);
+        cv.put("contact_name", newContactName);
 
-        int result = db.update("Contact", cv, "contact_id = ?", new String[]{contact_id});
+        int result = db.update("Contact", cv, "contact_name = ?", new String[]{oldContactName});
         if(result == 0){
             Toast.makeText(context, "FAILED", Toast.LENGTH_SHORT).show();
         } else {
